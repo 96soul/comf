@@ -405,8 +405,8 @@ local Module: any = {} do
 		do repeat wait() until game:GetService("CoreGui").lnwza.Background
 			game:GetService("CoreGui").lnwza.Background:GetPropertyChangedSignal("Size"):Connect(function()
 				local size = game:GetService("CoreGui").lnwza.Background.Size
-				Module[1].save('X', size.X.Offset)
-				Module[1].save('Y', size.Y.Offset)
+				Module.save('X', size.X.Offset)
+				Module.save('Y', size.Y.Offset)
 			end)
 		end
 
