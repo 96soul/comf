@@ -435,7 +435,7 @@ return table.unpack({
 	Indexing,
 	translate,
 	Library,
-	Players,
+	Player,
 	GetRoot,
 	GetHumanoid,
 })
