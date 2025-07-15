@@ -7,6 +7,7 @@ local Lighting: Lighting = game:GetService('Lighting')
 local TeleportService: TeleportService = game:GetService('TeleportService')
 local VirtualUser: VirtualUser = game:GetService('VirtualUser')
 local RunService: RunService = game:GetService('RunService')
+local HttpService: HttpService = game:GetService('HttpService')
 
 local Player: LocalPlayer = Players.LocalPlayer
 local Backpack: Backpack = Players:FindFirstChildOfClass("Backpack")
