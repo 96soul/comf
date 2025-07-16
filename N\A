@@ -60,6 +60,14 @@ local Module: any = {} do
 			until tick() - startTick >= (interval or 0.1) 
 		end
 	end
+	
+	function Module:again(fn): any
+		return task.spawn(function()
+			while task.wait(0.1) do
+				fn()
+			end
+		end)
+	end
 
 	Module.alive = function(v)
 		return typeof(v) == "Instance" and v:IsA("Model") and v:FindFirstChild("Humanoid") and v:FindFirstChild("Humanoid").Health > 0
