@@ -46,7 +46,7 @@ Player.Idled:Connect(function()
 	VirtualUser:ClickButton2(Vector2.new());
 end)
 
-Players.LocalPlayer.CharacterAdded:Connect(function()
+Players.LocalPlayer.CharacterAdded:Connect(function(v)
 	repeat wait() until GetRoot(Player.Character) and GetHumanoid(Player.Character)
 end)
 
@@ -151,6 +151,15 @@ local Module: any = {} do
 		if v:FindFirstChild('Constant') then
 			v:FindFirstChild('Constant'):Destroy()
 		end
+	end
+	
+	Module.tablecheck = function(config: any, _table: string)
+		for _,v in pairs(_table) do
+			if config[v] == true then
+				return true 
+			end 
+		end 
+		return false 
 	end
 
 	Module.def = function(v: string, a: boolean | string | number | table | any)
